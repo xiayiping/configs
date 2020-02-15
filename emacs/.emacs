@@ -2,9 +2,18 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
-(package-initialize)
+;;(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+;;                         ("melpa" . "https://melpa.org/packages/")))
+;;(package-initialize)
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+
+(setq package-check-signature nil) 
+(package-initialize) ;; You might already have this line
+(require 'evil)
+(require 'company)
+(require 'helm)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -37,7 +46,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (spacemacs-theme helm-projectile magit evil company-c-headers company-ctags helm gnu-elpa-keyring-update company ace-window)))
+    (magit-find-file magithub spacemacs-theme helm-projectile magit evil company-c-headers company-ctags helm gnu-elpa-keyring-update company ace-window)))
  '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e")))
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -56,17 +65,12 @@
  '(minibuffer-prompt ((t (:foreground "red")))))
 
 
-(require 'evil)
-(require 'company)
-(require 'helm)
-
-(setq package-check-signature nil) 
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
 (setq company-global-modes '(not gud-mode))
 
 (show-paren-mode t)
-(global-hl-line-mode t)
+;;(global-hl-line-mode t)
 
 (defun my:c-hook()
   (linum-mode t)
@@ -172,4 +176,4 @@
 
 (my:c-project-setting)
 ;;
-(load-theme 'spacemacs-dark)
+;;(load-theme 'spacemacs-dark)
