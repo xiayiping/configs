@@ -80,3 +80,5 @@ nnoremap ]e :<C-u>cn<cr>
 nnoremap ]E :<C-u>copen<cr>
 
 nnoremap <C-l> :<C-u>nohl<cr><C-l>
+
+highlight Visual ctermfg=NONE ctermbg=NONE cterm=reverse guifg=NONE guibg=NONE gui=reverse
